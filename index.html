@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Offline</title>
+    <link rel="stylesheet" href="styles2.css">
+    <link rel="manifest" href="manifest.json">
+</head>
+<body>
+<h1>Guia de Desarrollo Móvil</h1>
+<h1>Iniciar Sesión</h1>
+
+    <form>
+    <div class="container">       
+
+        Usuario:<br>
+        <input id="user" placeholder="Usuario"><br><br>
+        Contraseña:<br>
+        <input id="pass" placeholder="Contraseña" type="password"><br><br>
+
+        <button onclick="iniciar()">Entrar</button>       
+    </div>   
+</form>
+    <a href="registro.html">Crear cuenta nueva</a>
+    
+    <script src="app.js"></script>
+
+    <script>
+        
+        if ("serviceWorker" in navigator) {
+            navigator.serviceWorker.register("service-worker.js")
+            .then(() => console.log("Service Worker registrado"));
+        }
+    </script>
+
+</body>
+</html>
