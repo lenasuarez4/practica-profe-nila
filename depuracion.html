@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Depuración y Seguridad</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Depuración y Seguridad en Apps</h1>
+    <img src="seguridad.png" width="350">
+
+    <p>La depuración y la seguridad son fases críticas al desarrollar apps. Android Studio incluye herramientas integradas de depuración: por ejemplo, el depurador permite establecer puntos de interrupción en código Java/Kotlin (y C/C++ si es necesario), inspeccionar variables, seguir la pila de ejecución, etc. Hay una ventana Debug con pestañas para subprocesos y pila, y se puede alternar entre depuración Java y nativa
+
+. Aunque no citamos un párrafo específico para esas herramientas, son parte fundamental del IDE oficial.</p>
+
+<p>Una herramienta esencial es el registro del sistema (logcat). Como explica Android Studio, “la ventana Logcat te ayuda a depurar tu app mostrando registros del dispositivo en tiempo real”
+
+. Para aprovechar esto, el código debe generar mensajes de log con Log.d()/Log.i()/Log.e(), etc. Estos mensajes de log proporcionan visibilidad del flujo de ejecución y ayudan a identificar fallos: “ayudan a comprender el flujo de ejecución y pueden indicar qué parte de la app ha fallado”
+
+. Por ejemplo, se suele colocar Log.d("MyApp", "Se ha cargado el perfil del usuario") en puntos clave. Los desarrolladores filtran estos mensajes en Android Studio (ventana Logcat) y pueden incluir el stack trace de excepciones para análisis posterior. Otras herramientas de depuración incluyen Android Profiler (uso de CPU, memoria, red), y comandos de ADB (como adb logcat, adb shell dumpsys). También se recomienda usar pruebas unitarias y de UI automatizadas (Espresso, JUnit) para detectar errores antes de lanzamiento. Además, la refactorización de código es parte de la mejora continua: Android Studio ofrece acciones para renombrar variables/métodos, extraer funciones, mover clases, etc., lo que ayuda a limpiar “code smells” y seguir buenas prácticas de diseño sin alterar el comportamiento.</p>
+   
+<img src="seguridadimg.png" width="350">
+
+<p>En cuanto a seguridad, las apps móviles deben proteger los datos y las credenciales. Android utiliza un sistema de permisos en el manifest: por ejemplo, para enviar notificaciones se declara <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
+
+, y para acceder a la cámara, ubicación, etc., se solicitan los permisos correspondientes. A partir de Android 6.0, estos permisos sensibles también deben solicitarse en tiempo de ejecución al usuario. Se recomienda usar el menor nivel de privilegios posible. Por ejemplo, para datos sensibles internos no se expone el archivo de configuración (no guardar claves en texto plano), sino que se emplean mecanismos seguros. Android proporciona el Keystore para criptografía: “el sistema Android Keystore permite almacenar claves criptográficas en un contenedor para que resulte más difícil extraerlas del dispositivo”
+
+. Con ello, el cifrado se realiza usando hardware seguro y las claves quedan protegidas.</p>
+
+<p>Por otra parte, toda comunicación con servicios externos debe ser segura. Se emplean siempre conexiones cifradas (HTTPS/TLS) y librerías confiables de autenticación (OAuth, OpenID Connect, Firebase Auth, etc.). No se deben incluir contraseñas en el código fuente: como enfatiza OWASP, “las credenciales de autenticación para acceder a servicios externos a la aplicación deben ser cifrados y almacenados en ubicaciones protegidas (por ejemplo, el servidor). El código fuente NO es una ubicación segura”
+. De igual forma, se implementan medidas como almacenamiento cifrado en base de datos (SQLCipher), uso de tokens en lugar de contraseñas, validación de certificados, y revisiones de seguridad (auditorías, análisis estático) antes de publicar. En resumen, la depuración utiliza herramientas del IDE y registros log para corregir errores; la seguridad se logra mediante permisos adecuados, cifrado de datos (keystore), buenas prácticas de autenticación y revisión cuidadosa del código.</p>
+
+   <a id="regresar" href="menu.html">← Regresar al index</a>
+</body>
+</html>

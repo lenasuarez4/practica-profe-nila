@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Gestión de Sensores</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Gestión de Sensores</h1>
+    <img src="sensores.png" width="350">
+
+    <h2>Gestión de sensores en dispositivos móviles</h2>
+    <p>Los sensores permiten a las apps móviles obtener datos del entorno físico. Los dispositivos Android suelen incluir tres categorías principales de sensores</p>  
+    
+    
+    <ul>
+        <li>Sensores de movimiento: miden aceleraciones y rotaciones. Ejemplos: acelerómetro, giroscopio, vector de rotación, gravedad.</li>
+        <li>Sensores ambientales: miden condiciones externas. Ejemplos: temperatura, presión barométrica, humedad, sensor de luz.</li>
+        <li>Sensores de posición: determinan orientación espacial. Ejemplos: brújula (magnetómetro), proximidad, orientación.</li>
+    </ul>
+    <p>Para usar un sensor en Android se emplea el SensorManager. El proceso típico es: (1) detectar si el sensor existe en el dispositivo; (2) registrar un listener para recibir sus lecturas; (3) procesar los datos del sensor cuando llegan. El SDK de Android ayuda con estas tareas: permite “determinar los sensores disponibles”, “adquirir datos sin procesar” y “registrar o dar de baja listeners” para eventos del sensor
+
+. De hecho, la interfaz SensorEventListener proporciona los métodos onSensorChanged() y onAccuracyChanged(), que reciben notificaciones cuando varían los valores del sensor
+
+. En código, al iniciar una actividad se obtiene una instancia de SensorManager y se registra el listener: por ejemplo, sensorManager.registerListener(myListener, mLight, SensorManager.SENSOR_DELAY_NORMAL) habilita el sensor de luz para que envíe eventos al listener mientras la app esté activa. Es importante desregistrar (sensorManager.unregisterListener(...)) cuando ya no se necesiten los datos para ahorrar batería.</p>
+
+<img src="sensoresimg.jpeg" >
+
+<p>El procesamiento de la información del sensor depende del tipo de app. Por ejemplo, se pueden aplicar filtros (p. ej. promedio, mediana) a los valores recibidos para suavizar lecturas; o interpretar datos complejos (como señales del giroscopio) mediante algoritmos adicionales. Android entrega los datos “sin procesar” a alta frecuencia, y luego la app puede fusionar información de varios sensores si lo requiere (por ejemplo, combinar acelerómetro y magnetómetro para obtener orientación absoluta). En resumen, el flujo es: habilitar sensor  registrar listener  recibir datos en onSensorChanged()  procesarlos  usar en la interfaz o lógica de la app.</p>
+    
+<a id="regresar" href="menu.html">← Regresar al index</a>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Empaquetado y Despliegue</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Herramientas para Empaquetado y Despliegue</h1>
+    <img src="empaquetado.png" width="350">
+
+    <p>Antes de distribuir la app se debe compilar y empaquetar adecuadamente. En Android, el resultado habitual es un archivo APK (Android Package) firmado digitalmente. Desde 2018, Google promueve el uso del formato Android App Bundle (AAB) como paquete de publicación oficial
+
+. Un App Bundle (.aab) agrupa el código y recursos en módulos y permite a Google Play generar APKs optimizados para cada dispositivo (segmentándolos por arquitecturas, idiomas, funciones, etc.)
+
+. Esto reduce el tamaño final descargado. Además del bundle, se puede generar APKs para versiones de debug (desarrollo) y release (distribución), configurando Gradle desde Android Studio o la línea de comandos (./gradlew assembleRelease). En iOS, el empaquetado genera un archivo IPA firmado, usando Xcode y perfiles de aprovisionamiento de Apple.</p>
+  
+<img src="empaquetadoimg.png" width="350">
+
+<p>La herramienta principal de compilación es el sistema Gradle (a través de Android Studio o comandos). El Gradle Wrapper (gradlew) asegura versiones consistentes de Gradle para todos los desarrolladores
+
+. El proceso de empaquetado incluye compilar el código, procesar recursos, firmar el paquete con una clave privada y optimizarlo (minificar, obfuscar con ProGuard/D8). Otras herramientas auxiliares son, por ejemplo, Android Asset Packaging Tool (AAPT) o Android App Bundle Tool (bundletool) cuando se trabaja fuera de Play.</p>
+
+
+
+
+<a id="regresar" href="menu.html">← Regresar al index</a>
+</body>
+</html>
