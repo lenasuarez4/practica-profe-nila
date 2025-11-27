@@ -1,0 +1,112 @@
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background: linear-gradient(135deg, #ff4da6, #c93bff, #ff66c4);
+    background-size: 300% 300%;
+    animation: gradientMove 12s ease infinite;
+
+    color: #fff;
+    text-align: center;
+}
+
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+
+form {
+    width: 350px;
+    padding: 35px 30px;
+    background: rgba(255, 182, 220, 0.15);
+    border-radius: 18px;
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    box-shadow: 0 8px 30px rgba(255, 30, 150, 0.45);
+    animation: fadeIn 0.8s ease;
+    text-align: left;
+}
+
+@keyframes fadeIn {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+
+h1 {
+    margin-bottom: 25px;
+    font-size: 32px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: #ffe6f7;
+    text-shadow: 0 0 12px rgba(255, 180, 230, 0.8);
+}
+
+
+form input {
+    width: 100%;
+    padding: 12px;
+    margin-top: 6px;
+    margin-bottom: 18px;
+    border: none;
+    border-radius: 10px;
+    background: rgba(255, 220, 240, 0.35);
+    color: #fff;
+    font-size: 15px;
+    outline: none;
+    backdrop-filter: blur(5px);
+    transition: 0.3s;
+}
+
+form input:focus {
+    background: rgba(255, 230, 245, 0.55);
+    box-shadow: 0 0 10px rgba(255, 120, 190, 0.9);
+}
+
+
+button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+
+    background: linear-gradient(135deg, #ff4da6, #ff1e8e);
+    color: #fff;
+
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+
+    transition: 0.3s;
+    box-shadow: 0 5px 20px rgba(255, 40, 140, 0.6);
+}
+
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(255, 80, 180, 0.8);
+}
+
+
+a {
+    margin-top: 20px;
+    display: inline-block;
+    color: #ffe6f7;
+    text-decoration: none;
+    opacity: 0.85;
+    transition: 0.3s;
+    text-align: center;
+}
+
+a:hover {
+    opacity: 1;
+    text-shadow: 0 0 8px rgba(255, 200, 240, 1);
+}
